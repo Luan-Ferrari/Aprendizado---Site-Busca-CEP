@@ -1,0 +1,40 @@
+.header{
+    background: rgba(15,15,15,90%);
+    width: 100%;
+    position: fixed;
+    z-index:10;
+}
+
+.header-box{
+    position: relative;
+    width: 1900px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.logo{
+    height: 6em;
+    margin: 1em;
+    margin-left: 12%;
+}
+
+.menu-header{
+    color: #e7e7e7;
+    position: absolute;
+    top: 0;
+    right: 12%;
+    height: 6em;
+    margin: 1em;
+}
+
+.menu-header li{
+    display: inline-block;
+    padding: 2.5em;
+    font-size: 1em; /**(2.5em x 2) + 1em = 6em = height de .menu-header**/
+}
+
+.menu-header li:hover{
+    text-decoration: underline;
+    /**mudar o cursor para a maozinha de clicar em link, vai fazer automatico após associar a tag <a>?**/
+}
+

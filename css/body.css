@@ -1,0 +1,78 @@
+body{
+    background: rgb(15,15,15);
+}
+
+.main-box{
+    position: static;
+    width: 1900px; 
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+/**estilizacoa do carrossel no modelo checkbox hack**/
+.carrossel{
+    display: block;
+    margin: auto;
+    position: relative;
+}
+
+.banner{
+    position: absolute;
+}
+
+.banner input{
+    display: none;
+}
+
+.banner label{
+    background: rgb(70, 70, 70);
+    position: absolute;
+    bottom: 30px;
+    cursor: pointer;
+    display: block;
+    height: 15px;
+    width: 15px;
+    z-index: 8;
+    left: 50px;
+}
+
+.banner:nth-child(1) label{
+    left: 48%;
+}
+
+.banner:nth-child(2) label{
+    left: 50%;
+}
+
+.banner:nth-child(3) label{
+    left: 52%
+}
+/** aqui foi usado seletores avançados para posicionar os botões do carrossel,
+me parece que colocar uma id para cada label e estilizar através do id ficaria mais legível.
+Outro ponto que certa vez li que seletores avançados exigem maior processamento, o quanto isso
+pode atingir a performance do site?**/
+
+.carrossel img{
+    margin: auto;
+    width: 100%;
+    visibility: hidden;
+}
+
+.banner input:checked ~ img {
+    visibility: visible;
+}
+
+.banner input:checked ~ label{
+    background: rgb(15,15,15);
+}
+/** ~ é um seletor de irmaos, aqui ele é utilizado para aplicar estilo somente a img irmão de um input com a situação de checked(selecionado)**/
+
+.sombra-banner-carrossel{
+    width: 100%;
+    height: 600px;
+    display: block;
+    box-shadow: inset 0px 0px 10px 20px rgb(15,15,15);
+    position: relative;
+    margin: 0 auto;
+    /**Esse estilo aplica sombra interna aos banners do carrossel, height 600px porque as imagens do banner possuem essa altura**/
+}
