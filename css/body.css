@@ -16,16 +16,16 @@ body{
     position: relative;
 }
 
-.banner{
+.item-carrossel{
     position: absolute;
 }
 
-.banner input{
+.item-carrossel input{
     display: none;
 }
 
-.banner label{
-    background: rgb(70, 70, 70);
+.item-carrossel label{
+    background: rgb(120, 120, 120);
     position: absolute;
     bottom: 30px;
     cursor: pointer;
@@ -33,18 +33,17 @@ body{
     height: 15px;
     width: 15px;
     z-index: 8;
-    left: 50px;
 }
 
-.banner:nth-child(1) label{
+.item-carrossel:nth-child(1) label{
     left: 48%;
 }
 
-.banner:nth-child(2) label{
+.item-carrossel:nth-child(2) label{
     left: 50%;
 }
 
-.banner:nth-child(3) label{
+.item-carrossel:nth-child(3) label{
     left: 52%
 }
 /** aqui foi usado seletores avançados para posicionar os botões do carrossel,
@@ -52,18 +51,40 @@ me parece que colocar uma id para cada label e estilizar através do id ficaria 
 Outro ponto que certa vez li que seletores avançados exigem maior processamento, o quanto isso
 pode atingir a performance do site?**/
 
-.carrossel img{
-    margin: auto;
-    width: 100%;
+.banner {
     visibility: hidden;
 }
 
-.banner input:checked ~ img {
-    visibility: visible;
+.titulo-banner{
+    color: white;
+    font-size: 4em;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    /**position absolute, top 50%, left 50%, e os valores de transform 50% alinham um texto absolute ao centro da div pai**/
 }
 
-.banner input:checked ~ label{
+.texto-banner{
+    color: white;
+    font-size: 1.5em;
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.imagem-banner{
+    width: 100%;
+}
+
+.item-carrossel input:checked ~ label{
     background: rgb(15,15,15);
+}
+
+.item-carrossel input:checked ~ .banner{
+    visibility: visible;
 }
 /** ~ é um seletor de irmaos, aqui ele é utilizado para aplicar estilo somente a img irmão de um input com a situação de checked(selecionado)**/
 
