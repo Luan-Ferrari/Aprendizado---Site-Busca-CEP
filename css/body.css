@@ -23,8 +23,35 @@ body{
 .item-carrossel input{
     display: none;
 }
+/**feito para fazer o botão do input radio subir, dessa forma só aparece a label que é estilizada abaixo**/
 
-.item-carrossel label{
+.botao-troca-direita{
+    background: rgb(120, 120, 120);
+    position: absolute;
+    bottom: 30px;
+    cursor: pointer;
+    display: block;
+    height: 15px;
+    width: 15px;
+    z-index: 8;
+    left: 70%;
+    visibility: hidden;
+}
+
+.botao-troca-esquerda{
+    background: rgb(120, 120, 120);
+    position: absolute;
+    bottom: 30px;
+    cursor: pointer;
+    display: block;
+    height: 15px;
+    width: 15px;
+    z-index: 8;
+    left: 30%;
+    visibility: hidden;
+}
+
+.botao-troca-inferior{
     background: rgb(120, 120, 120);
     position: absolute;
     bottom: 30px;
@@ -35,15 +62,15 @@ body{
     z-index: 8;
 }
 
-.item-carrossel:nth-child(1) label{
+.item-carrossel:nth-child(1) .botao-troca-inferior{
     left: 48%;
 }
 
-.item-carrossel:nth-child(2) label{
+.item-carrossel:nth-child(2) .botao-troca-inferior{
     left: 50%;
 }
 
-.item-carrossel:nth-child(3) label{
+.item-carrossel:nth-child(3) .botao-troca-inferior{
     left: 52%
 }
 /** aqui foi usado seletores avançados para posicionar os botões do carrossel,
@@ -79,11 +106,19 @@ pode atingir a performance do site?**/
     width: 100%;
 }
 
-.item-carrossel input:checked ~ label{
+.item-carrossel input:checked ~ .botao-troca-inferior{
     background: rgb(15,15,15);
 }
 
 .item-carrossel input:checked ~ .banner{
+    visibility: visible;
+}
+
+.item-carrossel input:checked ~ .botao-troca-direita{
+    visibility: visible;
+}
+
+.item-carrossel input:checked ~ .botao-troca-esquerda{
     visibility: visible;
 }
 /** ~ é um seletor de irmaos, aqui ele é utilizado para aplicar estilo somente a img irmão de um input com a situação de checked(selecionado)**/
